@@ -1,0 +1,44 @@
+
+<nav class="nav bg-light padding">
+  <li class="nav-item">
+    <%=link_to "Inicio", shops_path, class: "nav-link"%>
+  </li>
+
+  <li class="nav-item">
+
+    <%=link_to "Nueva tienda", new_shop_path,class: "nav-link" %>
+  </li>
+
+  <li class="nav-item">
+    <%= link_to "Lista Almacenes", stocks_path, class: "nav-link" %>
+  </li>
+
+  <li class="nav-item">
+    <%= link_to "Crear almacen", new_stock_path, class: "nav-link" %>
+  </li>
+
+  <li class="nav-item">
+    <%= link_to "Lista productos", products_path, class: "nav-link" %>
+  </li>
+
+  <li class="nav-item">
+    <%= link_to "Crear producto", new_product_path, class: "nav-link" %>
+  </li>
+
+  <li class="nav-item">
+    <%= link_to "Pedido", orders_path, class: "nav-link" %>
+  </li>
+
+  <% if user_signed_in? %>
+    <li class="nav-item">
+      <%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete, class: "nav-link" %>
+    </li>
+  <% else %>
+    <li class="nav-item">
+      <%= link_to "Iniciar sesion", new_user_session_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Registrar", new_user_registration_path, class: "nav-link" %>
+    </li>
+  <%end %>
+</nav>

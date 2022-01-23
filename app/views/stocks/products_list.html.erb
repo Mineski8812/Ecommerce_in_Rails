@@ -1,0 +1,28 @@
+
+
+
+<div class="large-container center-block">
+
+  <h1>Productos del almacen: <%=@stock.Name %></h1>
+
+  <table border="1">
+
+    <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+    </tr>
+
+    </thead>
+    <tbody>
+    <%@products.each do |product| %>
+    <tr>
+      <td><%=product.Name %></td>
+      <td><%=product.Description %></td>
+    </tr>
+    <% end %>
+    </tbody>
+
+  </table>
+
+</div>

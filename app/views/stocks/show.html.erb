@@ -1,0 +1,20 @@
+
+
+<div class="large-container center-block">
+
+  <div>
+    <h2 class="text-uppercase">
+      <%=@stock.Name %>
+    </h2>
+  </div>
+
+  <div>
+    <h2 class="text-secondary">
+      <%=@stock.Description %>
+    </h2>
+  </div>
+
+  <%= link_to "Regresar", stocks_path %> |
+
+  <%= link_to "Eliminar", @stock, method: :delete, data:{confirm:"Esta seguro que va a eliminar este elemento?"} %>
+</div>

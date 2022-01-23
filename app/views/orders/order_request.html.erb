@@ -1,0 +1,24 @@
+
+<div class="large-container center-block">
+  <h1>Pedido</h1>
+  <%=form_with(model: @order) do |form|%>
+
+  <div class="field">
+    <%= form.label :Descripcion %>
+    <%= form.text_field :Description %>
+  </div>
+
+    <div class="field">
+      <%= form.label :Cantidad %>
+      <%= form.text_field :Amount %>
+    </div>
+
+    <%=form.hidden_field :products_id, :value => @order.products_id %>
+    <%=form.hidden_field :client_id, :value => @order.client_id %>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+
+  <%end %>
+</div>

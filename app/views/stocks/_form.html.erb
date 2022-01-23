@@ -1,0 +1,34 @@
+<%= form_with(model: stock, local: true) do |form|%>
+
+  <% if stock.errors.any? %>
+    <div>
+      <h2><%= pluralize(stock.errors.count,"error") %> No se puede guardar o editar el almacen en cuestion.</h2>
+    </div>
+
+    <%stock.errors.each do |error| %>
+      <li><%= error.full_message %></li>
+    <%end %>
+  <%end %>
+
+  <div class="field">
+    <%= form.label :Nombre%>
+    <%= form.text_field :Name%>
+  </div>
+
+  <div class="field">
+    <%= form.label :Descripcion%>
+    <%= form.text_field :Description%>
+  </div>
+
+<div class="field" data-controller='select2'>
+
+    <%= form.select :shop_id, Shop.all.map { |shop| [shop.Name, shop.id] }, {include_blank: false, required: true, include_hidden: false}, class: 'form-control content-search' %>
+
+</div>
+
+
+  <div>
+    <%=form.submit%>
+  </div>
+
+<%end%>
