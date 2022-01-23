@@ -1,0 +1,48 @@
+<%= form_with(model: product) do |form| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+        <% product.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Nombre %>
+    <%= form.text_field :Name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Fecha_Caducidad %>
+    <%= form.datetime_select :EndingDate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Descripcion %>
+    <%= form.text_field :Description %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :Cantidad %>
+    <%= form.text_field :cant %>
+  </div>
+
+<!--  <div class="field">-->
+    <%#= form.label :Stock_id %>
+    <%#= form.text_field :Stock_id %>
+<!--  </div>-->
+
+  <div class="field" data-controller="select2">
+    <%= form.label :Almacen %>
+    <%= form.select :stock_id, Stock.all.map{ |stock| [stock.Name, stock.id]}, {include_blank: false, required: true, include_hidden: false}, class: 'form-control content-search' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,21 @@
+
+<div class="large-container center-block">
+
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Nombre:</strong>
+    <%= @shop.Name %>
+  </p>
+
+  <p>
+    <strong>Direccion:</strong>
+    <%= @shop.Address %>
+  </p>
+
+  <%= link_to 'Editar', edit_shop_path(@shop) %> |
+  <%= link_to 'Atras', shops_path %>
+
+
+</div>
+
