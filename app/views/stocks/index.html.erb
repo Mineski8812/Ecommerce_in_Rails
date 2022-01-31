@@ -1,56 +1,15 @@
-
 <%require 'json' %>
+
 <div class="large-container center-block">
 
-
+  <p id="notice"><%= notice %></p>
 <h1> Almacenes</h1>
-  <div class="container">
+<div class="row">
 
-<stock-index :stocks="<%=@stocks.to_json%>"></stock-index>
-<!--    <table border="1" class="table table-striped table-bordered" style="width: 1000px;">-->
-
-<!--      <thead>-->
-<!--      <tr>-->
-<!--        <th>Nombre</th>-->
-<!--        <th>Descripcion</th>-->
-<!--        <th colspan="5">Acciones</th>-->
-<!--      </tr>-->
-
-<!--      </thead>-->
-<!--      <tbody>-->
-
-      <%# @stock.each do |stock| %>
-<!--        <tr>-->
-<!--          <td><%#=stock.Name %></td>-->
-<!--          <td><%#=stock.Description %></td>-->
-
-<!--          <td><%#= link_to 'Mostrar', show_stock_path(stock) %> | </td>-->
-<!--          <td><%#= link_to 'Editar' , edit_stock_path(id: stock)%> | </td>-->
-<!--          <td><%#= link_to 'Eliminar', stock, method: :delete, data:{confirm:"Esta seguro que va a eliminar este elemento?"}%> |</td>-->
-<!--          <td><%#= link_to 'Lista Productos',products_list_path(stock) %></td>-->
-<!--        </tr>-->
-      <%#end %>
-
-<!--      </tbody>-->
-
-<!--    </table>-->
-
-  </div>
-
-
-  <br>
-  <br>
-
-
- <div data-controller="hello">
-   <input data-hello-target="name" type="number">
-
-   <button data-action='hello#greet' class="btn btn-secondary">Enviar</button>
-
-   <span data-hello-target="output"></span>
-
-
- </div>
-
+        <%#= tag.id id:'dinamic-table',data: {lists: @result} %>
+        <stock-index :stocks="<%=@stocks.to_json%>"></stock-index>
 
 </div>
+
+</div>
+
